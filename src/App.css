@@ -41,7 +41,13 @@ body {
   background-color: rgba(0, 0, 255, 0.546);
 }
 
-img {
-  max-width: 20vw;
-  max-height: 20vw;
+h1 {
+  margin-left: 42vw;
+  margin-top: 5vw;
+}
+
+footer {
+  text-align: center;
+margin-top: 60vw;
+  
 }
