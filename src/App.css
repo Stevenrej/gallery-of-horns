@@ -38,5 +38,10 @@
 }
 
 body {
-  background-color: blue;
+  background-color: rgba(0, 0, 255, 0.546);
+}
+
+img {
+  max-width: 20vw;
+  max-height: 20vw;
 }
