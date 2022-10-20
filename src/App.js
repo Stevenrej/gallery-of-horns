@@ -1,5 +1,6 @@
 // import
 import React from 'react';
+
 import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
@@ -19,7 +20,9 @@ class App extends React.Component {
       selectBeast: '',
       image_url: '',
       data: data,
-      selectedBeast: {}
+      selectedVal: '',
+      sortedData: data,
+
     }
   }
 
@@ -50,6 +53,41 @@ class App extends React.Component {
   }
 
 
+
+  handleSelect = (event) => {
+    event.preventDefault()
+    let selected = event.target.selected.value;
+    console.log(selected);
+    console.log(event.target)
+    if (selected === '1 Horn') {
+      let newData = data.filter(beast => beast.horns === 1);
+      this.setState({
+        data: newData
+      })
+    } else if (selected === '2 Horns') {
+      let newData = data.filter(beast => beast.horns === 2);
+      this.setState({
+        data: newData
+      })
+    } else if (selected === '3 Horns') {
+      let newData = data.filter(beast => beast.horns === 3);
+      this.setState({
+        data: newData
+      })
+    } else if (selected === '100 Horns') {
+      let newData = data.filter(beast => beast.horns === 100);
+      this.setState({
+        data: newData
+      })
+    } else {
+
+      this.setState({
+        data: data
+      })
+    }
+  }
+
+
   render() {
     return (
       <>
@@ -60,18 +98,21 @@ class App extends React.Component {
           addHearts={this.addHearts}
           handleOpenModal={this.handleOpenModal}
           data={this.state.data}
+          handleSelect={this.handleSelect}
         />
+
+
         <SelectedBeast
-        handleOpenModal={this.handleOpenModal}
-        handleCloseModal={this.handleCloseModal}
-        selectBeast={this.state.selectBeast}
-        image_url={this.state.image_url}
-        selectedBeast={this.state.selectedBeast}
-        showModal={this.state.showModal}
+          handleOpenModal={this.handleOpenModal}
+          handleCloseModal={this.handleCloseModal}
+          selectBeast={this.state.selectBeast}
+          image_url={this.state.image_url}
+          selectedBeast={this.state.selectedBeast}
+          showModal={this.state.showModal}
 
         />
 
-        <Footer/>
+        <Footer />
       </>
     )
   }

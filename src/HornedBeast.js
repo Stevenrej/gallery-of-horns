@@ -30,23 +30,28 @@ class HornedBeast extends React.Component {
     return (
       <Col>
 
-          <Card 
-            style={{ width: '12vw' }}>
-            <Card.Img
-              variant="top"
-              src={this.props.imageurl}
-              alt={this.props.alt}
-              onClick={this.props.addHearts}
-            />
-            <Card.Body>
-                <Card.Title onClick={this.handleNameClick}> {this.props.title}</Card.Title>
-                <Card.Text>
-                  {this.props.description}
-                  {this.state.favorties} Favorites
-                </Card.Text>
-                <Button onClick={this.handleHeart} variant="danger">❤️</Button>
-            </Card.Body>
-          </Card>
+        <Card
+          style={{ width: '12vw' }}>
+          <Card.Img
+            variant="top"
+            src={this.props.imageurl}
+            alt={this.props.alt}
+            onClick={this.props.addHearts}
+          />
+          <Card.Body>
+            <Card.Title onClick={this.handleNameClick}> {this.props.title}</Card.Title>
+            <Card.Text>
+              {this.props.description}
+            </Card.Text>
+            <Card.Text>
+              {this.props.horns} Horn(s)
+            </Card.Text>
+            <Card.Text>
+              {this.state.favorties} Hearts
+            </Card.Text>
+            <Button onClick={this.handleHeart} variant="danger">❤️</Button>
+          </Card.Body>
+        </Card>
 
       </Col>
 
